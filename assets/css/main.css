@@ -3945,6 +3945,93 @@ input, select, textarea {
 
 		}
 
+/* Testimonials */
+.testimonial-carousel {
+	position: relative;
+	margin: 2em 0;
+}
+
+.testimonial {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	padding: 2em;
+	background: rgba(255, 255, 255, 0.05);
+	border-left: 4px solid #f56a6a;
+	border-radius: 0 0.375em 0.375em 0;
+}
+
+.testimonial.active {
+	display: block;
+	opacity: 1;
+}
+
+.testimonial blockquote {
+	margin: 0;
+	font-style: italic;
+	line-height: 1.6;
+}
+
+.testimonial blockquote p {
+	margin-bottom: 1em;
+	font-size: 1.1em;
+}
+
+.testimonial cite {
+	display: block;
+	margin-top: 1em;
+	font-weight: bold;
+	font-style: normal;
+	color: #f56a6a;
+	font-size: 0.9em;
+}
+
+.testimonial-image {
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+	max-width: 120px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	margin-bottom: 1em;
+}
+
+.carousel-controls {
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+.carousel-prev,
+.carousel-next {
+	background: #f56a6a;
+	color: white;
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 1.5em;
+	margin: 0 0.5em;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+	background: #e55555;
+}
+
+@media screen and (max-width: 736px) {
+	.testimonial-image {
+		max-width: 80px;
+		margin: 0 auto 1em;
+		display: block;
+	}
+	
+	.testimonial blockquote p {
+		font-size: 1em;
+	}
+}
+
 /* Footer */
 
 	#footer {

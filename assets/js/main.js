@@ -255,4 +255,29 @@
 
 		}
 
+	// Testimonial Carousel
+	let currentTestimonial = 0;
+	const testimonials = document.querySelectorAll('.testimonial');
+
+	function showTestimonial(index) {
+		testimonials.forEach((testimonial, i) => {
+			testimonial.classList.toggle('active', i === index);
+		});
+	}
+
+	window.changeTestimonial = function(direction) {
+		currentTestimonial += direction;
+		if (currentTestimonial >= testimonials.length) {
+			currentTestimonial = 0;
+		} else if (currentTestimonial < 0) {
+			currentTestimonial = testimonials.length - 1;
+		}
+		showTestimonial(currentTestimonial);
+	};
+
+	// Auto-advance testimonials every 10 seconds
+	setInterval(() => {
+		changeTestimonial(1);
+	}, 10000);
+
 })(jQuery);
