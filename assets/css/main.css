@@ -3949,6 +3949,7 @@ input, select, textarea {
 .testimonial-carousel {
 	position: relative;
 	margin: 2em 0;
+	min-height: 400px; /* Fixed minimum height to prevent size changes */
 }
 
 .testimonial {
@@ -3959,22 +3960,33 @@ input, select, textarea {
 	background: rgba(255, 255, 255, 0.05);
 	border-left: 4px solid #f56a6a;
 	border-radius: 0 0.375em 0.375em 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 360px; /* Fixed height for content area */
 }
 
 .testimonial.active {
 	display: block;
 	opacity: 1;
+	position: relative;
 }
 
 .testimonial blockquote {
 	margin: 0;
 	font-style: italic;
 	line-height: 1.6;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .testimonial blockquote p {
 	margin-bottom: 1em;
 	font-size: 1.1em;
+	flex-grow: 1;
 }
 
 .testimonial cite {
@@ -3984,14 +3996,13 @@ input, select, textarea {
 	font-style: normal;
 	color: #f56a6a;
 	font-size: 0.9em;
+	flex-shrink: 0;
 }
 
 .testimonial-image {
 	width: 100%;
-	height: auto;
+	height: 360px; /* Fixed height to match testimonial content */
 	border-radius: 8px;
-	max-width: 120px;
-	aspect-ratio: 1;
 	object-fit: cover;
 	margin-bottom: 1em;
 }
@@ -4032,10 +4043,23 @@ input, select, textarea {
 }
 
 @media screen and (max-width: 736px) {
+	.testimonial-carousel {
+		min-height: 600px; /* Increased height for mobile stacked layout */
+	}
+	
+	.testimonial {
+		min-height: 560px; /* Adjusted for mobile */
+		position: relative; /* Reset positioning for mobile */
+	}
+	
 	.testimonial-image {
-		max-width: 80px;
-		margin: 0 auto 1em;
-		display: block;
+		height: 250px; /* Reduced height for mobile */
+		margin-bottom: 1.5em;
+	}
+	
+	.testimonial blockquote {
+		height: auto; /* Auto height for mobile */
+		justify-content: flex-start;
 	}
 	
 	.testimonial blockquote p {
