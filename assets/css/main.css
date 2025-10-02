@@ -3989,7 +3989,7 @@ input, select, textarea {
 .testimonial-image {
 	width: 100%;
 	height: auto;
-	border-radius: 50%;
+	border-radius: 8px;
 	max-width: 120px;
 	aspect-ratio: 1;
 	object-fit: cover;
@@ -4030,6 +4030,44 @@ input, select, textarea {
 	.testimonial blockquote p {
 		font-size: 1em;
 	}
+}
+
+/* Form Label Visibility Fix */
+#contact-form label {
+	color: #ffffff !important;
+	font-weight: 600;
+	margin-bottom: 0.5em;
+	display: block;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 0.075em;
+}
+
+#contact-form .field {
+	margin-bottom: 1.5em;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #ffffff;
+	border-radius: 4px;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form input[type="tel"]:focus,
+#contact-form textarea:focus {
+	background: rgba(255, 255, 255, 0.15);
+	border-color: #f56a6a;
+	box-shadow: 0 0 0 2px rgba(245, 106, 106, 0.25);
+}
+
+#contact-form ::placeholder {
+	color: rgba(255, 255, 255, 0.5);
 }
 
 /* Footer */
