@@ -11,7 +11,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="Expert running coaching with Matt - personalized training programs, injury prevention, and performance optimization for runners of all levels." />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+				.testimonial {
+					min-height: 22em;
+				}
+				.testimonial-image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: 0;
+				}
+
+				#services .posts {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				#services .posts article {
+					width: 50%;
+				}
+
+				#services header.major {
+					text-align: center;
+				}
+
+				.button, .box, input[type="submit"], input[type="reset"], input[type="button"] {
+					border: 1px solid #ccc !important;
+				}
+			</style>
+			</style>
 	</head>
 	<body class="is-preload">
 
@@ -101,7 +130,6 @@
 							<section id="testimonials">
 								<header class="major">
 									<h2>What Athletes Say</h2>
-									<p>Real results from real runners</p>
 								</header>
 								<div class="testimonial-carousel">
 									<div class="testimonial active">
@@ -189,16 +217,16 @@
 							<form method="POST" action="https://formspree.io/f/mdkwzwdg" id="contact-form">
 								<div class="fields">
 									<div class="field">
-										<label for="name">Name *</label>
-										<input type="text" name="name" id="name" required />
+										<label for="name">First Name *</label>
+										<input type="text" name="firstname" id="firstname" required />
+									</div>
+									<div class="field">
+										<label for="name">Last Name *</label>
+										<input type="text" name="lastname" id="lastname" required />
 									</div>
 									<div class="field">
 										<label for="email">Email *</label>
 										<input type="email" name="email" id="email" required />
-									</div>
-									<div class="field">
-										<label for="phone">Phone (optional)</label>
-										<input type="tel" name="phone" id="phone" />
 									</div>
 									<div class="field">
 										<label for="goals">Running Goals & Current Challenges</label>
