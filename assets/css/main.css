@@ -4003,21 +4003,32 @@ input, select, textarea {
 
 .carousel-prev,
 .carousel-next {
-	background: #f56a6a;
-	color: white;
-	border: none;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	font-size: 1.5em;
-	margin: 0 0.5em;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	width: 44px;
+	height: 44px;
+	border-radius: 6px;
+	font-size: 0.9em;
+	margin: 0 0.75em;
 	cursor: pointer;
-	transition: background 0.3s ease;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .carousel-prev:hover,
 .carousel-next:hover {
-	background: #e55555;
+	background: rgba(245, 106, 106, 0.1);
+	color: #f56a6a;
+	border-color: #f56a6a;
+	transform: translateY(-1px);
+}
+
+.carousel-prev:active,
+.carousel-next:active {
+	transform: translateY(0);
 }
 
 @media screen and (max-width: 736px) {
