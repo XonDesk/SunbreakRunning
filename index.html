@@ -79,9 +79,32 @@
 					padding-left: 2rem;
 					padding-right: 2rem;
 				}
-				.testimonial .col-6:first-child {
-					padding-right: 1rem;
-					margin-bottom: 1rem;
+				
+				/* Fix testimonial mobile layout */
+				.testimonial {
+					height: auto !important;
+					min-height: auto !important;
+					padding: 2rem 1rem;
+				}
+				.testimonial .row {
+					height: auto;
+					align-items: stretch;
+					flex-direction: column;
+				}
+				.testimonial-image {
+					height: 250px;
+					margin-bottom: 1.5rem;
+				}
+				.testimonial .col-4,
+				.testimonial .col-8 {
+					padding: 0 !important;
+					margin-bottom: 0;
+				}
+				.carousel-slide img {
+					height: 250px;
+					max-height: 250px;
+					object-fit: cover;
+					object-position: center;
 				}
 			}
 
