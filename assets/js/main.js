@@ -307,4 +307,60 @@
 		setInterval(showNextImageSlide, 5000);
 	}
 
+	// Auto-hide navigation on scroll (mobile only)
+	let lastScrollTop = 0;
+	let navHideTimeout;
+
+	function handleNavScroll() {
+		const navToggle = document.getElementById('navPanelToggle');
+		if (!navToggle) return;
+
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		const scrollDelta = Math.abs(scrollTop - lastScrollTop);
+
+		// Only trigger on significant scroll movement
+		if (scrollDelta > 5) {
+			if (scrollTop > lastScrollTop && scrollTop > 100) {
+				// Scrolling down - hide nav
+				navToggle.classList.remove('nav-visible');
+				navToggle.classList.add('nav-hidden');
+			} else {
+				// Scrolling up - show nav
+				navToggle.classList.remove('nav-hidden');
+				navToggle.classList.add('nav-visible');
+			}
+			lastScrollTop = scrollTop;
+		}
+
+		// Clear any existing timeout
+		clearTimeout(navHideTimeout);
+
+		// Show nav after 2 seconds of no scrolling
+		navHideTimeout = setTimeout(() => {
+			navToggle.classList.remove('nav-hidden');
+			navToggle.classList.add('nav-visible');
+		}, 2000);
+	}
+
+	// Add scroll listener for mobile navigation
+	if (window.innerWidth <= 980) {
+		window.addEventListener('scroll', handleNavScroll);
+		
+		// Re-check on window resize
+		window.addEventListener('resize', function() {
+			if (window.innerWidth <= 980 && !window.scrollEventAdded) {
+				window.addEventListener('scroll', handleNavScroll);
+				window.scrollEventAdded = true;
+			} else if (window.innerWidth > 980 && window.scrollEventAdded) {
+				window.removeEventListener('scroll', handleNavScroll);
+				window.scrollEventAdded = false;
+				// Reset nav visibility
+				const navToggle = document.getElementById('navPanelToggle');
+				if (navToggle) {
+					navToggle.classList.remove('nav-hidden', 'nav-visible');
+				}
+			}
+		});
+	}
+
 })(jQuery);

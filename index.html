@@ -108,6 +108,27 @@
 				}
 			}
 
+			/* Auto-hide navigation on scroll */
+			@media screen and (max-width: 980px) {
+				#navPanelToggle {
+					transition: transform 0.3s ease, opacity 0.3s ease;
+					position: fixed;
+					top: 1rem;
+					right: 1rem;
+					z-index: 10001;
+				}
+
+				#navPanelToggle.nav-hidden {
+					transform: translateY(-100px);
+					opacity: 0;
+				}
+
+				#navPanelToggle.nav-visible {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+
 			/* Show Instagram text in navigation */
 			#nav .icons .icon > .label {
 				display: inline !important;
@@ -240,10 +261,10 @@
 										</div>
 									</div>
 								</div>
-								<p>I'm so glad you're here!! Running have been a transformative part of my lives and in the lives of many of my athletes. 
-									This sport is so all-encompassing that is becomes a uniquely powerful tool for improvement whether that's fixing old injuries or learning to be kind to yourself. 
-									My goal has always been to help others understand what their best effort looks like and learn to be proud of it, divorcing self-worth from outcome. 
-									Whether your goal is winning your local 100 miler or beginning the journey towards your first 5k, I'm excited to hear from you and help you develop towards your goals!</p>
+								<p>I'm so glad you're here!! Running has been a cornerstone in my life and has been transformative in the lives of many of my athletes. 
+									The all-encompassing nature of this sport allows it to become a uniquely powerful tool for improvement whether it's fixing old injuries or learning to be kind to yourself. 
+									My goal has always been to help others understand what their best effort looks like and learn to be proud of it, separating self-worth from outcome. 
+									Whether your goal is winning a local 100 miler or beginning the journey towards your first 5k, I'm excited to hear from you and help you develop towards your goals!</p>
 								<ul class="actions special">
 									<li><a href="#contact" class="button large">Start Your Journey</a></li>
 								</ul>
