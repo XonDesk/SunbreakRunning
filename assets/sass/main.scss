@@ -68,4 +68,4 @@
 	@import 'layout/nav';
 	@import 'layout/main';
 	@import 'layout/footer';
-@import 'layout/navPanel';\n\n#main {\n  background-color: #212931 !important;\n  color: #ffffff !important;\n}\n\n#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p, #main blockquote, #main cite {\n  color: #ffffff !important;\n}\n\n.icon > .label {\n  display: inline !important;\n  margin-left: 0.5em;\n}
+@import 'layout/navPanel';\n\n#main {\n  background-color: #212931 !important;\n  color: #ffffff !important;\n}\n\n#main h1, #main h2, #main h3, #main h4, #main h5, #main h6, #main p, #main blockquote, #main cite {\n  color: #ffffff !important;\n}\n\n.icon > .label {\n  display: inline !important;\n  margin-left: 0.5em;\n}\n\n.testimonial {\n  display: none;\n}\n\n.testimonial.active {\n  display: block;\n}
