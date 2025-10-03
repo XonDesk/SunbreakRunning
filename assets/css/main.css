@@ -2944,9 +2944,9 @@ input, select, textarea {
 			margin-top: -0.75rem;
 		}
 
-		header.major {
-			margin: 0 0 4rem 0;
-			text-align: center;
+			header.major {
+				margin: 0 0 2rem 0;
+				text-align: center;
 		}
 
 			header.major > :last-child {
@@ -3285,7 +3285,7 @@ input, select, textarea {
 
 	#intro {
 		color: #ffffff;
-		padding: 8rem 4rem 6rem 4rem ;
+		padding: 4rem 4rem 3rem 4rem;
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3765,7 +3765,7 @@ input, select, textarea {
 	}
 
 		#main > * {
-			padding: 4rem 4rem 2rem 4rem ;
+			padding: 2rem 4rem 1rem 4rem;
 			border-top: solid 2px #eeeeee;
 			margin: 0;
 		}
@@ -3779,7 +3779,7 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			padding: 4rem 8rem 3rem 8rem;
 		}
 
 			#main > .post header.major > .date {
