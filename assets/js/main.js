@@ -253,6 +253,13 @@
 
 			});
 
+			// Fallback: ensure intro reappears when near top of page
+			$window.on('load.introFallback scroll.introFallback', function() {
+				if ($window.scrollTop() <= 10) {
+					$intro.removeClass('hidden');
+				}
+			});
+
 		}
 
 	// Testimonial Carousel
