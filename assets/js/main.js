@@ -280,4 +280,41 @@
 		changeTestimonial(1);
 	}, 10000);
 
+	// Image Carousel functionality
+	let currentImageSlide = 0;
+	const imageSlides = document.querySelectorAll('.carousel-slide');
+	const imageDots = document.querySelectorAll('.carousel-dot');
+
+	function showImageSlideInternal(index) {
+		// Remove active class from all slides and dots
+		imageSlides.forEach((slide, i) => {
+			slide.classList.toggle('active', i === index);
+		});
+		imageDots.forEach((dot, i) => {
+			dot.classList.toggle('active', i === index);
+		});
+		currentImageSlide = index;
+	}
+
+	window.changeImageCarousel = function(direction) {
+		currentImageSlide += direction;
+		if (currentImageSlide >= imageSlides.length) {
+			currentImageSlide = 0;
+		} else if (currentImageSlide < 0) {
+			currentImageSlide = imageSlides.length - 1;
+		}
+		showImageSlideInternal(currentImageSlide);
+	};
+
+	window.showImageSlide = function(index) {
+		showImageSlideInternal(index);
+	};
+
+	// Auto-advance image carousel every 8 seconds
+	if (imageSlides.length > 0) {
+		setInterval(() => {
+			changeImageCarousel(1);
+		}, 8000);
+	}
+
 })(jQuery);

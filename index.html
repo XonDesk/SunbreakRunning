@@ -79,6 +79,149 @@
 					margin-bottom: 1rem;
 				}
 			}
+
+			/* Show Instagram text in navigation */
+			#nav .icons .icon > .label {
+				display: inline !important;
+				margin-left: 0.5em;
+			}
+
+			/* Fix contact form text visibility */
+			#contact {
+				color: #ffffff !important;
+			}
+
+			#contact label {
+				color: #ffffff !important;
+				font-weight: 600 !important;
+			}
+
+			#contact h2, #contact p {
+				color: #ffffff !important;
+			}
+
+			#contact-form input[type="text"],
+			#contact-form input[type="email"],
+			#contact-form textarea {
+				background: rgba(255, 255, 255, 0.1) !important;
+				border: 1px solid rgba(255, 255, 255, 0.3) !important;
+				color: #ffffff !important;
+			}
+
+			#contact-form input[type="text"]:focus,
+			#contact-form input[type="email"]:focus,
+			#contact-form textarea:focus {
+				background: rgba(255, 255, 255, 0.15) !important;
+				border-color: #f56a6a !important;
+			}
+
+			#contact-form ::placeholder {
+				color: rgba(255, 255, 255, 0.6) !important;
+			}
+
+			/* Image Carousel Styles */
+			.image-carousel-container {
+				position: relative;
+				width: 100%;
+				margin-bottom: 2rem;
+			}
+
+			.image-carousel {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				border-radius: 4px;
+			}
+
+			.carousel-slide {
+				display: none;
+				width: 100%;
+				position: relative;
+			}
+
+			.carousel-slide.active {
+				display: block;
+			}
+
+			.carousel-slide img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.image-carousel-controls {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 1rem;
+				padding: 0 1rem;
+			}
+
+			.carousel-prev, .carousel-next {
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: #ffffff;
+				padding: 0.75rem;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				width: 3rem;
+				height: 3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.carousel-prev:hover, .carousel-next:hover {
+				background: rgba(255, 255, 255, 0.2);
+				border-color: #f56a6a;
+				transform: scale(1.1);
+			}
+
+			.carousel-dots {
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+			}
+
+			.carousel-dot {
+				width: 0.75rem;
+				height: 0.75rem;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.3);
+				border: 1px solid rgba(255, 255, 255, 0.5);
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.carousel-dot.active {
+				background: #f56a6a;
+				border-color: #f56a6a;
+				transform: scale(1.2);
+			}
+
+			.carousel-dot:hover {
+				background: rgba(245, 106, 106, 0.7);
+				border-color: #f56a6a;
+			}
+
+			/* Responsive adjustments for image carousel */
+			@media screen and (max-width: 768px) {
+				.image-carousel-controls {
+					padding: 0 0.5rem;
+				}
+
+				.carousel-prev, .carousel-next {
+					width: 2.5rem;
+					height: 2.5rem;
+					padding: 0.5rem;
+				}
+
+				.carousel-dot {
+					width: 0.625rem;
+					height: 0.625rem;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -128,7 +271,36 @@
 									that respects your body and accelerates your potential.<br />
 									Data-driven. Deeply personal. Designed for lasting success.</p>
 								</header>
-								<a href="#philosophy" class="image main"><img src="images/pic01.jpg" alt="Coach Matt running" /></a>
+								<div class="image-carousel-container">
+									<div class="image-carousel">
+										<div class="carousel-slide active">
+											<img src="images/img-1.png" alt="Coach Matt training - Image 1" class="image main" />
+										</div>
+										<div class="carousel-slide">
+											<img src="images/img-2.jpg" alt="Coach Matt training - Image 2" class="image main" />
+										</div>
+										<div class="carousel-slide">
+											<img src="images/img-3.jpg" alt="Coach Matt training - Image 3" class="image main" />
+										</div>
+										<div class="carousel-slide">
+											<img src="images/img-4.jpg" alt="Coach Matt training - Image 4" class="image main" />
+										</div>
+									</div>
+									<div class="image-carousel-controls">
+										<button class="carousel-prev" onclick="changeImageCarousel(-1)">
+											<i class="fas fa-chevron-left"></i>
+										</button>
+										<div class="carousel-dots">
+											<span class="carousel-dot active" onclick="showImageSlide(0)"></span>
+											<span class="carousel-dot" onclick="showImageSlide(1)"></span>
+											<span class="carousel-dot" onclick="showImageSlide(2)"></span>
+											<span class="carousel-dot" onclick="showImageSlide(3)"></span>
+										</div>
+										<button class="carousel-next" onclick="changeImageCarousel(1)">
+											<i class="fas fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
 								<p>Whether you're seeking to break through performance plateaus, overcome persistent injuries, 
 								or discover the joy of running for the first time, my approach combines cutting-edge sports science 
 								with personalized attention to help you become not just a faster runner, but a smarter, more resilient athlete.</p>
@@ -184,7 +356,7 @@
 											</div>
 										</div>
 									</div>
-<div class=\"col-4 col-12-small testimonial-image-container\">
+									<div class="testimonial">
 										<div class="row">
 											<div class="col-4 col-12-small testimonial-image-container">
 												<img id="julien-testimonial-image" src="images/julien-running.jpg" alt="Julien running" class="testimonial-image" />
