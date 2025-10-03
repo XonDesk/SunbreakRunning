@@ -280,41 +280,24 @@
 		changeTestimonial(1);
 	}, 10000);
 
-	// Image Carousel functionality
+	// Image Carousel auto-rotation functionality
 	let currentImageSlide = 0;
 	const imageSlides = document.querySelectorAll('.carousel-slide');
-	const imageDots = document.querySelectorAll('.carousel-dot');
 
-	function showImageSlideInternal(index) {
-		// Remove active class from all slides and dots
-		imageSlides.forEach((slide, i) => {
-			slide.classList.toggle('active', i === index);
-		});
-		imageDots.forEach((dot, i) => {
-			dot.classList.toggle('active', i === index);
-		});
-		currentImageSlide = index;
+	function showNextImageSlide() {
+		// Remove active class from current slide
+		imageSlides[currentImageSlide].classList.remove('active');
+		
+		// Move to next slide
+		currentImageSlide = (currentImageSlide + 1) % imageSlides.length;
+		
+		// Add active class to new slide
+		imageSlides[currentImageSlide].classList.add('active');
 	}
 
-	window.changeImageCarousel = function(direction) {
-		currentImageSlide += direction;
-		if (currentImageSlide >= imageSlides.length) {
-			currentImageSlide = 0;
-		} else if (currentImageSlide < 0) {
-			currentImageSlide = imageSlides.length - 1;
-		}
-		showImageSlideInternal(currentImageSlide);
-	};
-
-	window.showImageSlide = function(index) {
-		showImageSlideInternal(index);
-	};
-
-	// Auto-advance image carousel every 8 seconds
-	if (imageSlides.length > 0) {
-		setInterval(() => {
-			changeImageCarousel(1);
-		}, 8000);
+	// Auto-advance image carousel every 5 seconds
+	if (imageSlides.length > 1) {
+		setInterval(showNextImageSlide, 5000);
 	}
 
 })(jQuery);

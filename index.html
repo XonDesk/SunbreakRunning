@@ -28,6 +28,11 @@
 				object-fit: cover;
 				border-radius: 0;
 			}
+
+			/* Specific positioning for Julien's image to show his head */
+			#julien-testimonial-image {
+				object-position: center top;
+			}
 			.testimonial .col-6:first-child {
 				padding-right: 2rem;
 			}
@@ -149,79 +154,6 @@
 				display: block;
 			}
 
-			.image-carousel-controls {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: 1rem;
-				padding: 0 1rem;
-			}
-
-			.carousel-prev, .carousel-next {
-				background: rgba(255, 255, 255, 0.1);
-				border: 1px solid rgba(255, 255, 255, 0.3);
-				color: #ffffff;
-				padding: 0.75rem;
-				border-radius: 50%;
-				cursor: pointer;
-				transition: all 0.3s ease;
-				width: 3rem;
-				height: 3rem;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.carousel-prev:hover, .carousel-next:hover {
-				background: rgba(255, 255, 255, 0.2);
-				border-color: #f56a6a;
-				transform: scale(1.1);
-			}
-
-			.carousel-dots {
-				display: flex;
-				gap: 0.5rem;
-				align-items: center;
-			}
-
-			.carousel-dot {
-				width: 0.75rem;
-				height: 0.75rem;
-				border-radius: 50%;
-				background: rgba(255, 255, 255, 0.3);
-				border: 1px solid rgba(255, 255, 255, 0.5);
-				cursor: pointer;
-				transition: all 0.3s ease;
-			}
-
-			.carousel-dot.active {
-				background: #f56a6a;
-				border-color: #f56a6a;
-				transform: scale(1.2);
-			}
-
-			.carousel-dot:hover {
-				background: rgba(245, 106, 106, 0.7);
-				border-color: #f56a6a;
-			}
-
-			/* Responsive adjustments for image carousel */
-			@media screen and (max-width: 768px) {
-				.image-carousel-controls {
-					padding: 0 0.5rem;
-				}
-
-				.carousel-prev, .carousel-next {
-					width: 2.5rem;
-					height: 2.5rem;
-					padding: 0.5rem;
-				}
-
-				.carousel-dot {
-					width: 0.625rem;
-					height: 0.625rem;
-				}
-			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -285,20 +217,6 @@
 										<div class="carousel-slide">
 											<img src="images/img-4.jpg" alt="Coach Matt training - Image 4" class="image main" />
 										</div>
-									</div>
-									<div class="image-carousel-controls">
-										<button class="carousel-prev" onclick="changeImageCarousel(-1)">
-											<i class="fas fa-chevron-left"></i>
-										</button>
-										<div class="carousel-dots">
-											<span class="carousel-dot active" onclick="showImageSlide(0)"></span>
-											<span class="carousel-dot" onclick="showImageSlide(1)"></span>
-											<span class="carousel-dot" onclick="showImageSlide(2)"></span>
-											<span class="carousel-dot" onclick="showImageSlide(3)"></span>
-										</div>
-										<button class="carousel-next" onclick="changeImageCarousel(1)">
-											<i class="fas fa-chevron-right"></i>
-										</button>
 									</div>
 								</div>
 								<p>Whether you're seeking to break through performance plateaus, overcome persistent injuries, 
