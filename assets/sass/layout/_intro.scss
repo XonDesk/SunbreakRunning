@@ -13,7 +13,7 @@
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'column');
-		@include vendor('justify-content', 'flex-end');
+@include vendor('justify-content', 'center');
 		@include vendor('transition', (
 			'opacity 1s ease',
 			'transform 1s ease'
