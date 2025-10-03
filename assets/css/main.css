@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500&family=Source+Sans+Pro:wght@900&display=swap");
 
 /*
 	Massively by HTML5 UP
@@ -147,11 +147,11 @@ input, select, textarea {
 		color: #212931;
 	}
 
-	body, input, select, textarea {
-		font-family: "Merriweather", Georgia, serif;
-		font-weight: 300;
+body, input, select, textarea {
+		font-family: "M PLUS Rounded 1c", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+		font-weight: 400;
 		font-size: 1rem;
-		line-height: 2.375;
+		line-height: 1.8;
 	}
 
 	a {
