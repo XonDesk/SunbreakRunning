@@ -4099,8 +4099,14 @@ input, select, textarea {
 	}
 }
 
-/* Form Label Visibility Fix */
-#contact-form label {
+
+#joel-testimonial-image {
+	background-position: center 60%; /* Zoom in on Joel */
+}
+
+#julien-testimonial-image {
+	background-position: top; /* Keep Julien's head in frame */
+}
 	color: #ffffff !important;
 	font-weight: 600;
 	margin-bottom: 0.5em;
