@@ -109,9 +109,24 @@
 				
 				/* Fix credentials text line breaking on mobile */
 				.post.featured header.major p {
-					line-height: 1.8;
-					word-wrap: break-word;
-					overflow-wrap: break-word;
+					line-height: 1.8 !important;
+					word-wrap: break-word !important;
+					overflow-wrap: break-word !important;
+					white-space: normal !important;
+					max-width: 100% !important;
+				}
+				
+				/* Credentials list styling */
+				.credentials-list {
+					text-align: center;
+					margin: 0 auto;
+				}
+				
+				.credential-item {
+					display: block;
+					margin: 0.3em 0;
+					line-height: 1.4;
+					font-size: 1em;
 				}
 			}
 
@@ -246,11 +261,13 @@
 							<article class="post featured">
 								<header class="major">
 									<h2>Matt Jackson</h2>
-									<p>USATF Level 1 Coach<br />
-									5+ years coaching state champions, D1 athletes and trail race winners<br />
-									NCAA DII XC & Indoor/Outdoor Track<br />
-									Competitive runner of 13 years from 800m to 50 miles<br />
-									Event organizer and timer for Club Northwest<br /> </p>
+									<div class="credentials-list">
+										<div class="credential-item">USATF Level 1 Coach</div>
+										<div class="credential-item">5+ years coaching state champions, D1 athletes and trail race winners</div>
+										<div class="credential-item">NCAA DII XC & Indoor/Outdoor Track</div>
+										<div class="credential-item">Competitive runner of 13 years from 800m to 50 miles</div>
+										<div class="credential-item">Event organizer and timer for Club Northwest</div>
+									</div>
 								</header>
 								<div class="image-carousel-container">
 									<div class="image-carousel">
