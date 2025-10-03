@@ -3949,28 +3949,46 @@ input, select, textarea {
 .testimonial-carousel {
 	position: relative;
 	margin: 2em 0;
-	min-height: 400px; /* Fixed minimum height to prevent size changes */
+	min-height: 400px;
 }
 
 .testimonial {
 	display: none;
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
-	padding: 2em;
-	background: rgba(255, 255, 255, 0.05);
-	border-left: 4px solid #f56a6a;
-	border-radius: 0 0.375em 0.375em 0;
 	position: absolute;
 	top: 0;
 	left: 0;
-	right: 0;
-	min-height: 360px; /* Fixed height for content area */
+	width: 100%;
 }
 
 .testimonial.active {
 	display: block;
 	opacity: 1;
 	position: relative;
+}
+
+.testimonial .row {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+}
+
+.testimonial .col-8 {
+	padding: 2em;
+	border-left: 4px solid #f56a6a;
+}
+
+.testimonial .col-4 {
+	padding: 0;
+}
+
+.testimonial-image-container {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .testimonial blockquote {
@@ -3981,6 +3999,8 @@ input, select, textarea {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	border: 0;
+	padding: 0;
 }
 
 .testimonial blockquote p {
@@ -3997,18 +4017,6 @@ input, select, textarea {
 	color: #f56a6a;
 	font-size: 0.9em;
 	flex-shrink: 0;
-}
-
-.testimonial-image-container {
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	min-height: 360px;
-	border-radius: 8px 0 0 8px;
-}
-
-.testimonial-image {
-	display: none; /* Hide the img element */
 }
 
 .carousel-controls {
@@ -4048,24 +4056,42 @@ input, select, textarea {
 
 @media screen and (max-width: 736px) {
 	.testimonial-carousel {
-		min-height: 600px; /* Increased height for mobile stacked layout */
+		min-height: 0;
 	}
-	
+
 	.testimonial {
-		min-height: 560px; /* Adjusted for mobile */
-		position: relative; /* Reset positioning for mobile */
+		position: relative;
+		margin-bottom: 2em;
+	}
+
+	.testimonial .row {
+		display: block;
 	}
 
 	.testimonial-image-container {
-		height: 250px; /* Reduced height for mobile */
-		min-height: 250px; /* Override min-height */
-		margin-bottom: 1.5em;
+		height: 250px;
 		border-radius: 8px 8px 0 0;
 	}
-	
+
+	.testimonial .col-8,
+	.testimonial .col-4 {
+		width: 100%;
+	}
+
+	.testimonial .col-8 {
+		border-left: 0;
+		border-top: 4px solid #f56a6a;
+	}
+
 	.testimonial blockquote {
-		height: auto; /* Auto height for mobile */
+		height: auto;
 		justify-content: flex-start;
+	}
+
+	.testimonial blockquote p {
+		font-size: 1em;
+	}
+}
 	}
 	
 	.testimonial blockquote p {
