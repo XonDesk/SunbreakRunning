@@ -42,14 +42,67 @@
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
+				gap: 2rem;
 			}
 
 			#services .posts article {
-				width: 48%;
-				margin-bottom: 2rem;
-				padding: 2rem;
-				border: 1px solid #ddd;
+				width: calc(50% - 1rem);
+				margin-bottom: 0;
+				padding: 2.5rem;
+				border: 2px solid #cccccc;
 				border-radius: 4px;
+				background: rgba(255, 255, 255, 0.05);
+				display: flex;
+				flex-direction: column;
+			}
+
+			#services .posts article header h2 {
+				text-align: center;
+				margin-bottom: 1rem;
+				font-size: 1.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+			}
+
+			#services .posts article .price {
+				text-align: center;
+				font-size: 1.5rem;
+				color: #f56a6a;
+				font-weight: bold;
+				margin-bottom: 1.5rem;
+			}
+
+			#services .posts article ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			#services .posts article ul li {
+				padding: 0.75rem 0;
+				border-bottom: 1px solid #ffffff;
+				position: relative;
+				padding-left: 1.5rem;
+			}
+
+			#services .posts article ul li:last-child {
+				border-bottom: none;
+			}
+
+			#services .posts article ul li:before {
+				content: "✓";
+				position: absolute;
+				left: 0;
+				color: #f56a6a;
+				font-weight: bold;
+			}
+
+			#services .posts article strong {
+				color: #ffffff !important;
+			}
+
+			#services .posts article p {
+				color: rgba(255, 255, 255, 0.9);
 			}
 
 			#services header.major {
@@ -71,9 +124,12 @@
 			}
 
 			/* Responsive adjustments */
-			@media screen and (max-width: 768px) {
+				@media screen and (max-width: 768px) {
 				#services .posts article {
 					width: 100%;
+				}
+				#services .posts {
+					gap: 1.5rem;
 				}
 				#contact {
 					padding-left: 2rem;
@@ -247,7 +303,7 @@
 							<li><a href="#philosophy">Philosophy</a></li>
 							<li><a href="#testimonials">Testimonials</a></li>
 							<li><a href="#services">Services</a></li>
-							<li><a href="#contact">Contact</a></li>
+							<li><a href="#contact">Consultation</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.instagram.com/mattjacksond/" target="_blank" class="icon brands fa-instagram"><span class="label">Follow me here!</span></a></li>
@@ -285,12 +341,9 @@
 										</div>
 									</div>
 								</div>
-								<p>I'm so glad you're here!! Running has been a cornerstone in my life and has been transformative in the lives of many of my athletes. 
-									The all-encompassing nature of this sport allows it to become a uniquely powerful tool for improvement whether it's fixing old injuries or learning to be kind to yourself. 
-									My goal has always been to help others understand what their best effort looks like and learn to be proud of it, separating self-worth from outcome. 
-									Whether your goal is winning a local 100 miler or beginning the journey towards your first 5k, I'm excited to hear from you and help you develop towards your goals!</p>
+								<p>I'm so glad you're here! Running has been a cornerstone in my life and has been transformative in the lives of many of my athletes. The all-encompassing nature of this sport allows it to become a uniquely powerful tool for improvement whether it's fixing old injuries or learning to be kind to yourself. My goal has always been to help others understand what their best effort looks like and learn to be proud of it, separating self-worth from outcome. Whether you're beginning the journey towards your first 5k or aiming to win an ultra, I'm excited to hear from you and help you develop towards your goals!</p>
 								<ul class="actions special">
-									<li><a href="#contact" class="button large">Start Your Journey</a></li>
+									<li><a href="#contact" class="button large">Schedule a consultation</a></li>
 								</ul>
 							</article>
 
@@ -363,28 +416,43 @@
 								<div class="posts">
 									<article>
 										<header>
-											<h2>1:1 Coaching</h2>
+											<h2>Standard Plan</h2>
 										</header>
-										<p>Fully personalized training with weekly check-ins, real-time adjustments, and direct access to your coach. Perfect for runners with specific goals, injury histories, or those wanting maximum attention.</p>
+										<div class="price">$170 per month</div>
+										<ul>
+											<li>Individualized <strong>running & strength plans</strong></li>
+											<li>Daily training modifications & feedback</li>
+											<li>Weekly calls, unlimited email/text</li>
+											<li><strong>TrainingPeaks</strong> training platform</li>
+										</ul>
 									</article>
-								<article>
-									<header>
-										<h2>Injury Recovery</h2>
-									</header>
-									<p>Specialized programs for runners dealing with persistent injuries. Combines targeted strength work, movement assessment, and gradual return-to-running protocols.</p>
-								</article>
-								<article>
-									<header>
-										<h2>Training Plans</h2>
-									</header>
-									<p>Custom training plans for specific race distances and goals. Includes strength programming, periodization, and race strategy guidance.</p>
-								</article>
-								<article>
-									<header>
-										<h2>Form Analysis</h2>
-									</header>
-									<p>Video-based running form analysis with detailed feedback and corrective exercises. Improve efficiency and reduce injury risk through better biomechanics.</p>
-								</article>
+									<article>
+										<header>
+											<h2>Basic Plan</h2>
+										</header>
+										<div class="price">$120 per month</div>
+										<ul>
+											<li>Individualized <strong>running only</strong> plan</li>
+											<li>Weekly training feedback</li>
+											<li>Monthly calls, unlimited email/text</li>
+											<li><strong>TrainingPeaks</strong> training platform</li>
+										</ul>
+									</article>
+									<article>
+										<header>
+											<h2>1:1 Training Sessions</h2>
+										</header>
+										<div class="price">$100 per hour</div>
+										<p>In-person sessions for workouts, <strong>running form analysis</strong>, trail technique or <strong>strength training</strong>. For athletes in the <strong>Seattle area</strong>.</p>
+									</article>
+									<article>
+										<header>
+											<h2>Hour Consultation</h2>
+										</header>
+										<div class="price">$75 per consultation</div>
+										<p>Discuss <strong>training plans</strong>, race strategy, nutrition or anything else running related! Perfect for getting expert advice on your <strong>running goals</strong>.</p>
+									</article>
+								</div>
 							</section>
 
 						<!-- Footer -->
@@ -395,7 +463,7 @@
 					<footer id="contact">
 						<header class="major" style="text-align: center; margin-bottom: 2em;">
 							<h2>Ready to Transform Your Running?</h2>
-							<p>Let's discuss your goals and create a plan that works for you</p>
+							<p>Schedule a free 20 minute consultation!</p>
 						</header>
 						<section>
 							<form method="POST" action="https://formspree.io/f/mdkwzwdg" id="contact-form">
