@@ -282,10 +282,10 @@
 		showTestimonial(currentTestimonial);
 	};
 
-	// Auto-advance testimonials every 28 seconds
-	setInterval(() => {
-		changeTestimonial(1);
-	}, 28000);
+	// Auto-advance testimonials disabled
+	// setInterval(() => {
+	// 	changeTestimonial(1);
+	// }, 28000);
 
 	// Image Carousel auto-rotation functionality
 	let currentImageSlide = 0;
