@@ -1,0 +1,10 @@
+# robots.txt for Sunbreak Running
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sunbreakrunning.com/sitemap.xml
+
+# Optional: Disallow any future admin directories
+# User-agent: *
+# Disallow: /admin/
