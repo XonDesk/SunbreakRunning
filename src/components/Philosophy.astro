@@ -1,0 +1,93 @@
+---
+const principles = [
+  {
+    title: "Individualized",
+    description: "Every runner is unique. I work to understand your whole life—how running fits into it, what motivates you, and how to make training sustainable."
+  },
+  {
+    title: "Injury Prevention First",
+    description: "Through targeted strength and smart progression, I help athletes overcome persistent injuries while building resilient, powerful running."
+  }
+];
+---
+
+<section id="philosophy" class="philosophy">
+  <div class="container">
+    <div class="philosophy-header">
+      <span class="overline">Philosophy</span>
+      <h2>"Training is a conversation,<br/>not a monologue."</h2>
+    </div>
+    
+    <div class="principles">
+      {principles.map(p => (
+        <div class="principle">
+          <h3>{p.title}</h3>
+          <p>{p.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .philosophy {
+    background: var(--color-bg-elevated);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .philosophy-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-16);
+  }
+
+  .overline {
+    display: block;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .philosophy-header h2 {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .principle {
+    padding: var(--space-8);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: border-color var(--transition-base);
+  }
+
+  .principle:hover {
+    border-color: var(--color-accent);
+  }
+
+  .principle h3 {
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .principle p {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .principles {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

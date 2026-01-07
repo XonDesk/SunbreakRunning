@@ -1,0 +1,59 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Sunbreak Running - Expert Running Coaching",
+  description = "Expert running coaching with Matt - personalized training programs, injury prevention, and performance optimization for runners of all levels."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content={description} />
+  <link rel="canonical" href="https://sunbreakrunning.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sunbreakrunning.com/" />
+  <meta property="og:title" content="Sunbreak Running - Pacific Northwest Running Coach" />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://sunbreakrunning.com/images/img-1.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sunbreak Running" />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://sunbreakrunning.com/images/img-1.webp" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <title>{title}</title>
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYC49P6HMB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QYC49P6HMB');
+  </script>
+  <script src="https://app.rybbit.io/api/script.js" data-site-id="fda22996a6f1" defer></script>
+</head>
+<body>
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

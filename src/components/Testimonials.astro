@@ -1,0 +1,329 @@
+---
+const testimonials = [
+  {
+    name: "Caroline Alcorta",
+    image: "/images/caroline-running",
+    short: "Matt meets you where you're at, fostering empowerment and collaboration. I've seen tremendous improvement in my race performances.",
+    full: "I started working with Matt just about a year ago. At the time, I had been looking for a more structured approach to my training. I quickly realized Matt showed the same level of investment and enthusiasm into helping others achieve their goals, as I did to working toward my own. Matt takes a proactive approach to his coaching, through a deep understanding of evidence based practices and continuous pursuit to learn more. He meets you where you're at as an individual and what's going on in your life, which fosters a relationship of empowerment and collaboration between athlete + coach. Personally, I've seen a tremendous improvement in my race performances (trail + road) as result. But beyond that, I've noticed an immense amount of growth in myself since working with Matt."
+  },
+  {
+    name: "Joel Gartenberg",
+    image: "/images/joel-running",
+    short: "Matt's approach is data-driven and deeply personal. I finally feel like I know what I'm doing as an athlete.",
+    full: "Working with Coach Matt has been incredibly eye-opening. After five years of trail running, I came to Matt with a goal: train smarter, avoid another femoral stress fracture, and get faster for the Seattle Marathon. He delivered on all fronts. Matt's approach is both data-driven and deeply personal—he took the time to understand me as an athlete and made it clear this was a two-way street. His programming is creative, individualized, and always backed by a strong 'why' behind each workout. I finally feel like I know what I'm doing as an athlete and how to keep doing it without getting hurt."
+  },
+  {
+    name: "Julien Luebbers",
+    image: "/images/julien-running",
+    short: "Through Matt's strength programs, my injuries retreated and my running found a whole new type of power.",
+    full: "I hired Matt after just one conversation about training. The depth of his knowledge of running and his passion for the work of coaching were immediately apparent. Throughout the following months, I became a totally different athlete. Matt works especially well with persistent injuries. Through the strength programs that I received, I found my injuries retreating and my running imbued with a whole new type of strength. He is also a very holistic coach who will try to understand your life, how your running fits into it, and what motivates you to run. Matt bears the mark of a truly great coach: he deftly passes on not only the routine motions of training but his deep knowledge of its methods."
+  }
+];
+---
+
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="overline">Athletes</span>
+      <h2>What They Say</h2>
+    </div>
+
+    <div class="testimonial-carousel" id="testimonial-carousel">
+      {testimonials.map((t, i) => (
+        <article class={`testimonial ${i === 0 ? 'active' : ''}`} data-index={i}>
+          <div class="testimonial-card">
+            <div class="testimonial-image">
+              <picture>
+                <source srcset={`${t.image}.webp`} type="image/webp" />
+                <img src={`${t.image}.jpg`} alt={t.name} loading="lazy" />
+              </picture>
+            </div>
+            <div class="testimonial-content">
+              <svg class="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"/>
+              </svg>
+              <blockquote>
+                <p class="quote-short">{t.short}</p>
+                <p class="quote-full">{t.full}</p>
+              </blockquote>
+              <div class="testimonial-footer">
+                <cite>{t.name}</cite>
+                <button class="read-more-btn" data-testimonial={i}>
+                  <span class="show-more">Read More →</span>
+                  <span class="show-less">← Show less</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn prev" aria-label="Previous testimonial">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <div class="carousel-indicators">
+        {testimonials.map((_, i) => (
+          <button class={`indicator ${i === 0 ? 'active' : ''}`} data-index={i} aria-label={`Go to testimonial ${i + 1}`}></button>
+        ))}
+      </div>
+      <button class="carousel-btn next" aria-label="Next testimonial">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: var(--color-bg-elevated);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-12) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .overline {
+    display: block;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+  }
+
+  .testimonial-carousel {
+    position: relative;
+  }
+
+  .testimonial {
+    display: none;
+  }
+
+  .testimonial.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .testimonial-card {
+    display: flex;
+    gap: var(--space-1);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .testimonial-image {
+    flex: 0 0 320px;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .testimonial-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--color-bg);
+    border-radius: 4px;
+    margin-left: -40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-icon {
+    color: var(--color-accent);
+    opacity: 0.5;
+    margin-bottom: var(--space-3);
+  }
+
+  blockquote {
+    margin: 0 0 var(--space-4);
+  }
+
+  blockquote p {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  .quote-full {
+    display: none;
+  }
+
+  .testimonial.expanded .quote-short {
+    display: none;
+  }
+
+  .testimonial.expanded .quote-full {
+    display: block;
+  }
+
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  cite {
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+
+  .read-more-btn {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    transition: opacity var(--transition-fast);
+  }
+
+  .read-more-btn:hover {
+    opacity: 0.8;
+  }
+
+  .show-less {
+    display: none;
+  }
+
+  .testimonial.expanded .show-more {
+    display: none;
+  }
+
+  .testimonial.expanded .show-less {
+    display: inline;
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .carousel-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .carousel-indicators {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .indicator {
+    width: 24px;
+    height: 3px;
+    background: var(--color-border);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+  }
+
+  .indicator.active,
+  .indicator:hover {
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .testimonial-image {
+      flex: none;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    .testimonial-content {
+      margin: -20px var(--space-4) 0;
+      padding: var(--space-4);
+    }
+
+    blockquote p {
+      font-size: var(--font-size-sm);
+    }
+  }
+</style>
+
+<script>
+  const carousel = document.getElementById('testimonial-carousel');
+  const testimonials = carousel?.querySelectorAll('.testimonial');
+  const indicators = document.querySelectorAll('.indicator');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let currentIndex = 0;
+
+  function showTestimonial(index: number) {
+    testimonials?.forEach((t, i) => {
+      t.classList.toggle('active', i === index);
+      t.classList.remove('expanded');
+    });
+    indicators.forEach((ind, i) => {
+      ind.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    const newIndex = currentIndex === 0 ? (testimonials?.length || 1) - 1 : currentIndex - 1;
+    showTestimonial(newIndex);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const newIndex = (currentIndex + 1) % (testimonials?.length || 1);
+    showTestimonial(newIndex);
+  });
+
+  indicators.forEach((ind, i) => {
+    ind.addEventListener('click', () => showTestimonial(i));
+  });
+
+  document.querySelectorAll('.read-more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = btn.getAttribute('data-testimonial');
+      const testimonial = document.querySelector(`.testimonial[data-index="${index}"]`);
+      testimonial?.classList.toggle('expanded');
+    });
+  });
+</script>

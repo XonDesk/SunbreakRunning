@@ -1,0 +1,204 @@
+---
+const credentials = [
+  "USATF Level 2 Coach",
+  "5+ years coaching state champions, D1 athletes & trail winners",
+  "NCAA DII XC & Indoor/Outdoor Track athlete",
+  "13 years competitive running — 800m to 50 miles"
+];
+
+const images = [
+  { src: "/images/img-2", alt: "Coach Matt training" },
+  { src: "/images/img-3", alt: "Trail running in the PNW" },
+  { src: "/images/img-4", alt: "Race day coaching" },
+];
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="image-carousel" id="about-carousel">
+          {images.map((img, i) => (
+            <div class={`carousel-slide ${i === 0 ? 'active' : ''}`}>
+              <picture>
+                <source srcset={`${img.src}.webp`} type="image/webp" />
+                <img src={`${img.src}.jpg`} alt={img.alt} loading="lazy" />
+              </picture>
+            </div>
+          ))}
+        </div>
+        <div class="carousel-dots">
+          {images.map((_, i) => (
+            <button class={`dot ${i === 0 ? 'active' : ''}`} data-index={i} aria-label={`Slide ${i + 1}`}></button>
+          ))}
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <h2>Matt Jackson</h2>
+        <ul class="credentials">
+          {credentials.map(cred => (
+            <li>{cred}</li>
+          ))}
+        </ul>
+        <p>
+          Running has been transformative—for me and my athletes. My goal: help you find 
+          your best effort and learn to be proud of it. Whether you're chasing your first 
+          5K or an ultra podium, let's build something together.
+        </p>
+        <blockquote class="philosophy-quote">
+          "Training is a conversation, not a monologue."
+        </blockquote>
+        <p class="philosophy-detail">
+          Every runner is unique. I focus on individualized, injury-prevention-first coaching 
+          that respects your life and accelerates your potential.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-bg);
+    padding: var(--space-16) 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .about-content h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .credentials {
+    list-style: none;
+    margin-bottom: var(--space-4);
+  }
+
+  .credentials li {
+    padding: var(--space-1) 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .credentials li::before {
+    content: '';
+    width: 8px;
+    height: 2px;
+    background: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .about-content p {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .philosophy-quote {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-text);
+    margin: var(--space-4) 0;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .philosophy-detail {
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
+  .image-carousel {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: all var(--transition-fast);
+  }
+
+  .dot.active,
+  .dot:hover {
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .about-images {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+<script>
+  const carousel = document.getElementById('about-carousel');
+  const slides = carousel?.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+  let currentIndex = 0;
+
+  function showSlide(index: number) {
+    slides?.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+
+  // Auto-advance
+  setInterval(() => {
+    if (slides) {
+      showSlide((currentIndex + 1) % slides.length);
+    }
+  }, 5000);
+</script>
