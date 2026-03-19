@@ -1,22 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Services from '../components/Services.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-  <Nav />
-  <main>
-    <Hero />
-    <About />
-    <Testimonials />
-    <Services />
-    <Contact />
+<Layout title="Sunbreak Running" description="Sunbreak Running - Coming Soon">
+  <main style="
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    text-align: center;
+    padding: 2rem;
+  ">
+    <h1 style="
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 1rem;
+    ">Sunbreak Running</h1>
+    <p style="
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #888;
+      max-width: 480px;
+      line-height: 1.6;
+      margin: 0;
+    ">This service is currently unavailable. Thank you for your interest.</p>
   </main>
-  <Footer />
 </Layout>
